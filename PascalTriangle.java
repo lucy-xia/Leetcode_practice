@@ -13,7 +13,7 @@ class Solution {
     		List<Integer> current = new ArrayList<>();
     		current.add(1);
     		for(int j=1; j<i; j++){ //i剛好用來控制j的大小
-    			current.add=previous(j-1)+previous(j);		
+    			current.add(previous.get(j-1)+previous.get(j));		
     		}
     		current.add(1);
     		result.add(current);
