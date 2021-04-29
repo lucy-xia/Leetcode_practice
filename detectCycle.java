@@ -5,8 +5,8 @@ public class Solution {
         ListNode slow= head;
         ListNode fast= head;
 
-        while(slow.next!=null && fast.next!=null && fast.next.next!=null){ //跑操场总有相遇的时候，除非他们飞出去了
-        	slow=slow.next;
+        while(fast.next!=null && fast.next.next!=null){ //跑操场总有相遇的时候，除非他们飞出去了
+            slow=slow.next;
             fast=fast.next.next;
 
             if(slow== fast){ //相遇的地方不一定是循环开始的地方
