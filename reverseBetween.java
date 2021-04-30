@@ -38,3 +38,66 @@ class Solution {
         return dummy.next;
     }
 }
+
+//Another common way
+class Solution {
+    public ListNode reverseBetween(ListNode head, int m, int n) {
+        if(head== null) return head;
+        ListNode dummy=new ListNode(-1,head);
+        ListNode pre= dummy;
+        for(int i=0; i<m; i++){
+            pre= pre.next; //pre停在要轉換的list的最前面守護
+            
+        }
+        ListNode curr= pre.next;
+        
+        for(int i=m; i<n; i++){
+            ListNode next= cur.next; //next是要轉換list面後的第一個node
+            pre.next=next; //pre的後面接要轉換的list的最後一個node
+            next.next= pre.next;  //最後一個node接到第一個node的後面
+            cur.next=next.next; //倒數第二個連到最外面第一個node的右邊
+        }
+        
+        return dummy.next;
+        
+    }
+}
+
+//my solution
+class Solution {
+    public ListNode reverseBetween(ListNode head, int m, int n) {
+        if(head==null || m==n) return head;
+        
+        ListNode dummy= new ListNode(-1,head);
+        ListNode cur=head;
+        ListNode pre= dummy;
+        
+        int count=1;
+        while(head.next!=null){
+            
+            
+            if(count<m){
+                cur= cur.next;
+                pre=pre.next;
+                count++;
+            }
+            
+            if(count>=m && count<n){
+                ListNode next= cur.next;
+                cur.next=next.next;
+                next.next = pre.next;
+                pre.next=next;
+                count++;
+            }
+            if(count>=n){
+                count++;
+                break;
+            }
+            
+            
+        }
+        return dummy.next;
+    }
+}
+
+
