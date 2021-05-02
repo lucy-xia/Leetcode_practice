@@ -37,17 +37,45 @@ functions:
 4).setValue()
 
 List problems
+*cycle	
 141. Linked List Cycle  //判断是否有一个环存在：快慢指针法
 142. Linked List Cycle II  //存在环的话，求出开始循环的位置：包含两个while的快慢指针法
 160. Intersection of Two Linked Lists //两个list都出现的部分 x+z+y+z=y+z+x+z(所以在第二个z的地方相遇）
+-------------
+*remove duplicates
 82. Remove Duplicates from Sorted List II    //用来跳过的指针和真正移动的指针  //重复的直接去掉
 83. Remove Duplicates from Sorted List   //重复的可以保留一个
+-------------
+*merge
 21.Merge Two Sorted Lists     // result搭配Dummy_head（recursive method
 Hard）23.Merge K Sorted Lists  // 没做过
+-------------
+*reverse
 206. Reverse Linked List   // 三个宣告，while包四个转移语法
-不熟練)92. Reverse Linked List II //
+92. Reverse Linked List II //
 Hard)25. Reverse Nodes in k-Group
-Havent seen)24. Swap Nodes in Pairs
+-------------
+*swap
+24. Swap Nodes in Pairs
+-------------
+*sort in ascending ordering
+includes log sth)148. Sort List  //divide and conquer进行排序
+147. Insertion Sort List //特別註明使用插入排序的方式进行排序
+-------------
+*rotate
+61. Rotate List //將左邊的n - k % n個換到右邊 （方法待優化）
+-------------
+*reorder
+143. Reorder List
+-------------
+*partition
+86. Partition List
+-------------
+*
+
+
+
+
 
 
 2.Add Two number	//carry
