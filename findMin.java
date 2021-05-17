@@ -3,7 +3,7 @@ class Solution {
     	int left=0;
         int right= nums.length-1;
         
-        while(left+1<right){  //1+1<3
+        while(left+1<right){  //关注点
             int mid=(left+right)/2;
             if(nums[mid]>nums[right]) 
                 left=mid;        
