@@ -19,7 +19,7 @@ class Solution {
     		else if(cur>mid && cur<end)
     			start=mid;
     	}
-    	if(matrix[start/col][start%col]==target ||matrix[end/col][end%col])
+    	if(matrix[start/col][start%col]==target ||matrix[end/col][end%col]==target)
     		return true;
     	else
     		return false;
