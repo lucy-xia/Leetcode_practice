@@ -1,3 +1,5 @@
+//[3,4,5,1,2]
+//1
 class Solution {
     public int findMin(int[] nums) {
     	int left=0;
