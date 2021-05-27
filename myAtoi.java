@@ -1,4 +1,5 @@
 //atoi=ASCII to Integer 字符轉數字
+
 class Solution {
     public int myAtoi(String s) {
         int i=0;
