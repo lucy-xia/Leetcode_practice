@@ -30,7 +30,8 @@ class Solution {
     List<List<Integer>> result= new ArrayList<>();
     
     public List<List<Integer>> subsets(int[] nums) {
-        //corner case
+        if(nums.length==0)
+            return result;
         for(int k=0; k<=nums.length; k++)
             helper(new ArrayList<Integer>(), nums, 0,k);
         return result;
