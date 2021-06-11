@@ -90,14 +90,14 @@ class Solution {
         }
         for (int j = 0; j < n; j++) {
             for (int i = j; i >= 0; i--) {
-                // 当 [i, j] 只有一个字符时，必然是回文串
+                // 1.当 [i, j] 只有一个字符时，必然是回文串
                 if (i == j) 
                     dp[i][j] = true;
                 else {
-                    // 当 [i, j] 长度为 2 时，满足 cs[i] == cs[j] 即回文串
+                    // 2.当 [i, j] 长度为 2 时，满足 cs[i] == cs[j] 即回文串
                     if (j - i + 1 == 2) 
                         dp[i][j] = s.charAt(i) == s.charAt(j);
-                    // 当 [i, j] 长度大于 2 时，满足 (cs[i] == cs[j] && f[i + 1][j - 1]) 即回文串
+                    // 3.当 [i, j] 长度大于 2 时，满足 (cs[i] == cs[j] && f[i + 1][j - 1]) 即回文串
                     else 
                         dp[i][j] = s.charAt(i) == s.charAt(j) && dp[i + 1][j - 1];
                 }
