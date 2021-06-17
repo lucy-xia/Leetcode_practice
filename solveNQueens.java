@@ -1,7 +1,7 @@
 class Solution {
     Set<Integer> columns = new HashSet<Integer>();
-    Set<Integer> diagonals1 = new HashSet<Integer>();
-    Set<Integer> diagonals2 = new HashSet<Integer>();
+    Set<Integer> diagonals1 = new HashSet<Integer>(); //row和i之差是左上到右下
+    Set<Integer> diagonals2 = new HashSet<Integer>(); //row和i之和是右上到左下
 
     public List<List<String>> solveNQueens(int n) {
         List<List<String>> result= new ArrayList<>();
