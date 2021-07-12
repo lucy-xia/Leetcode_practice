@@ -40,3 +40,78 @@ class Solution {
              
      }       
 }
+
+//dp解法
+public String longestPalindrome(String s) {
+        if (s == null || s.length() < 2) {
+            return s;
+        }
+        int strLen = s.length();
+        int maxStart = 0;  //最长回文串的起点
+        int maxEnd = 0;    //最长回文串的终点
+        int maxLen = 1;  //最长回文串的长度
+
+        boolean[][] dp = new boolean[strLen][strLen];
+
+        for (int r = 1; r < strLen; r++) {
+            for (int l = 0; l < r; l++) {
+                if (s.charAt(l) == s.charAt(r) && (r - l < 3 || dp[l + 1][r - 1])) {
+                    dp[l][r] = true;
+                    if (r - l + 1 > maxLen) {
+                        maxLen = r - l + 1;
+                        maxStart = l;
+                        maxEnd = r;
+
+                    }
+                }
+
+            }
+
+        }
+        return s.substring(maxStart, maxEnd + 1);
+
+    }
+
+//中心扩散法
+class Solution {
+    
+    String result="";
+
+    public String longestPalindrome(String s) {
+        for (int i = 0; i < s.length(); i++) {          
+            helper(i, i, s);
+            helper(i, i + 1, s);
+        }
+        return result;
+    }
+    public void helper(int m, int n, String s) {
+        while (m >= 0 && n < s.length() && s.charAt(m) == s.charAt(n)) {
+            m--;
+            n++;
+        }
+        if (n - m - 1 > result.length()) 
+            result = s.substring(m + 1, n);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
